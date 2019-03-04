@@ -15,6 +15,7 @@
 		BC9F13CF222D33B40079F47B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC9F13CD222D33B40079F47B /* LaunchScreen.storyboard */; };
 		BC9F13DA222D33B40079F47B /* pill_organizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9F13D9222D33B40079F47B /* pill_organizerTests.swift */; };
 		BC9F13E5222D33B40079F47B /* pill_organizerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9F13E4222D33B40079F47B /* pill_organizerUITests.swift */; };
+		BC9F13F7222D35B80079F47B /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC9F13F6222D35B80079F47B /* ExternalAccessory.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		BC9F13E0222D33B40079F47B /* pill-organizerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "pill-organizerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC9F13E4222D33B40079F47B /* pill_organizerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pill_organizerUITests.swift; sourceTree = "<group>"; };
 		BC9F13E6222D33B40079F47B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC9F13F5222D35AA0079F47B /* pill-organizer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "pill-organizer.entitlements"; sourceTree = "<group>"; };
+		BC9F13F6222D35B80079F47B /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC9F13F7222D35B80079F47B /* ExternalAccessory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +87,7 @@
 				BC9F13D8222D33B40079F47B /* pill-organizerTests */,
 				BC9F13E3222D33B40079F47B /* pill-organizerUITests */,
 				BC9F13C0222D33B30079F47B /* Products */,
+				BC9F13F2222D35AA0079F47B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +104,7 @@
 		BC9F13C1222D33B30079F47B /* pill-organizer */ = {
 			isa = PBXGroup;
 			children = (
+				BC9F13F5222D35AA0079F47B /* pill-organizer.entitlements */,
 				BC9F13C2222D33B30079F47B /* AppDelegate.swift */,
 				BC9F13C4222D33B30079F47B /* FirstViewController.swift */,
 				BC9F13C6222D33B30079F47B /* SecondViewController.swift */,
@@ -126,6 +132,14 @@
 				BC9F13E6222D33B40079F47B /* Info.plist */,
 			);
 			path = "pill-organizerUITests";
+			sourceTree = "<group>";
+		};
+		BC9F13F2222D35AA0079F47B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC9F13F6222D35B80079F47B /* ExternalAccessory.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +210,11 @@
 				TargetAttributes = {
 					BC9F13BE222D33B30079F47B = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.WAC = {
+								enabled = 1;
+							};
+						};
 					};
 					BC9F13D4222D33B40079F47B = {
 						CreatedOnToolsVersion = 10.1;
@@ -436,7 +455,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "pill-organizer/pill-organizer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M2RVWTG97D;
 				INFOPLIST_FILE = "pill-organizer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -453,7 +474,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "pill-organizer/pill-organizer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M2RVWTG97D;
 				INFOPLIST_FILE = "pill-organizer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
